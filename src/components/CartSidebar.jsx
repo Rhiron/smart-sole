@@ -1,15 +1,14 @@
 import React from 'react';
 import { useShoppingCart } from './ShoppingCartContext';
-import { useNavigate } from 'react-router-dom'; // Just keep this
+import { useNavigate } from 'react-router-dom';
 import '../Styling/CartSidebar.css';
 
 const CartSidebar = () => {
     const { cartItems, isCartOpen, closeCart, incrementItemQuantity, decrementItemQuantity } = useShoppingCart();
-  let navigate = useNavigate(); // Hook for programmatic navigation
-
+  let navigate = useNavigate();
   const handleCheckout = () => {
-    closeCart(); // Close the sidebar
-    navigate('/checkout'); // Navigate to the checkout page
+    closeCart();
+    navigate('/checkout');
   };
 
     if (!isCartOpen) return null;

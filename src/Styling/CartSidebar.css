@@ -9,7 +9,7 @@
     overflow-y: auto;
     z-index: 100;
     transform: translateX(100%);
-    transition: transform 0.75s ease-in-out; /* Smooth transition */
+    transition: transform 0.75s ease-in-out; 
   }
   
   .cart-sidebar.open {
@@ -32,32 +32,32 @@
   
   .close-cart {
     display: flex;
-    justify-content: flex-end; /* Aligns button to the right */
+    justify-content: flex-end; 
     padding: 1rem;
     background: none;
     border: none;
     cursor: pointer;
     font-size: 1.5rem;
   }
-  /* Button hover effect */
+
 .close-cart:hover {
     color: #575757;
 }
   
-  /* Smooth transition for the sidebar */
+
 .cart-sidebar {
     transition: all 0.3s ease-in-out;
 }
   @media (max-width: 768px) {
     .cart-sidebar {
-      width: 100%; /* Full width on smaller screens */
+      width: 100%;
     }
   }
   
   .quantity-adjuster {
     display: flex;
     align-items: center;
-    justify-content:left; /* Adjust as needed for spacing */
+    justify-content:left; 
   }
   
   .quantity-adjuster button {
@@ -86,14 +86,13 @@
     cursor: pointer;
   }
   .checkout-button {
-    /* Example styling */
     background-color: #4a4a4a;
     color: white;
     border: none;
     padding: 10px 20px;
-    margin-top: 15px; /* Add some space above the button */
+    margin-top: 15px;
     cursor: pointer;
-    width: 100%; /* Make the button full-width */
+    width: 100%;
     border-radius: 5px;
   }
   .checkout-button:hover {
