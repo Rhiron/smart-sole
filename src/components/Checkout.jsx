@@ -7,11 +7,11 @@ const Checkout = () => {
     const [customer, setCustomer] = useState({});
     const [isShippingOpen, setShippingOpen] = useState(false);
     const [isChecked, setIsChecked] = useState(false);
-    const [isBillingSameAsShipping, setIsBillingSameAsShipping] = useState(true); // Default to true
+    const [isBillingSameAsShipping, setIsBillingSameAsShipping] = useState(true);
 
 
     const handleCheckboxChange = (event) => {
-    setIsChecked(event.target.checked); // Will be true or false
+    setIsChecked(event.target.checked);
   };
   const handleBillingToggleChange = (event) => {
     setIsBillingSameAsShipping(event.target.checked);
@@ -28,11 +28,11 @@ const Checkout = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Simulate a checkout process
+        
         console.log('Customer Info:', customer);
         console.log('Cart Items:', cartItems);
         alert('Thank you for your order!');
-        // Optionally clear the cart after checkout
+       
         clearCart();
     };
 
@@ -45,7 +45,7 @@ const Checkout = () => {
                 <div className='shipping-block'>
                 <h2 onClick={() => setShippingOpen(!isShippingOpen)}className='section-heading'>Shipping</h2>{isShippingOpen && (
                 <div>
-                    {/* Shipping form fields */}
+
                     <form onSubmit={handleSubmit} className='shipping-form'>
 
                         <label htmlFor='email'>Email <span className='required-star'>*</span></label>
@@ -174,7 +174,7 @@ const Checkout = () => {
                         />
                         <br/>
                         <h2>Billing Address</h2>
-                        {/* Existing form fields */}
+
 
                         <input
                         id='billingToggle' 
@@ -185,7 +185,7 @@ const Checkout = () => {
                         />
                         <label htmlFor='billingToggle'> Same as Shipping Address</label>
 
-                        {/* Conditional billing address fields */}
+
                         {!isBillingSameAsShipping && (
                         <div className='BillingAddress'>
                             <label htmlFor='countryBill'>Country <span className='required-star'>*</span></label>
