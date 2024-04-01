@@ -5,10 +5,12 @@ import ShoppingCart from './components/ShoppingCart';
 import Checkout from './components/Checkout';
 import ProductListing from './components/ProductListing';
 import CartSidebar from './components/CartSidebar';
+import Header from './components/header.jsx';
 
 function App() {
   return (
     <ShoppingCartProvider>
+      <Header />
       <Router>
         <Routes>
           <Route path="/" element={<ProductListing />} />
