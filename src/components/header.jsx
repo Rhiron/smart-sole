@@ -1,20 +1,26 @@
 import 'primeicons/primeicons.css';
+import { Link } from 'react-router-dom';
+import { useShoppingCart } from './ShoppingCartContext';
 
-const header = () => {
+
+
+
+const Header = () => {
+  const { toggleCart } = useShoppingCart();
   return (
     <header>
         <h1>Smart Sole</h1>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Womens</a></li>
-                <li><a href="#">Mens</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/men">Men's Products</Link></li>
+            <li><Link to="/women">Women's Products</Link></li>
             </ul>
         </nav>
 
-        <div id="Cart"><i className='pi pi-shopping-cart' style={{fontSize:"2rem"}}></i></div>
+        <div id="Cart"><i className='pi pi-shopping-cart' style={{fontSize:"2rem"}} onClick={toggleCart}></i></div>
     </header>
   )
 }
 
-export default header
+export default Header

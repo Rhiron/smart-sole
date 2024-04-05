@@ -1,0 +1,140 @@
+{
+  "product": [
+    {
+      "productId": "3200",
+      "image": "src/images/clarks_laurieann.png",
+      "brand": "Clarks",
+      "name": "Laurieann Sandel",
+      "description": "Sandel",
+      "price": "130.00"
+    },
+    {
+      "productId": "3201",
+      "image": "./images/clarksMiraFlatTideSandel.jpeg",
+      "brand": "Clarks",
+      "name": "Mira Flat Tide Sandel",
+      "description": "Sandel",
+      "price": "65.00"
+    },
+    {
+      "productId": "3202",
+      "image": "./images/k_kGenna.png",
+      "brand": "Kelly & Katie",
+      "name": "Genna",
+      "description": "High Heel",
+      "price": "90.00"
+    },
+    {
+      "productId": "3203",
+      "image": "./images/K_KHailee.png",
+      "brand": "Kelly & Katie",
+      "name": "Hailee Dress Sandel",
+      "description": "High Heel",
+      "price": "90.00"
+    },
+    {
+      "productId": "3204",
+      "image": "./images/blowfish_chelseabootie.png",
+      "brand": "Blowfish",
+      "name": "Beam Chelsea Bootie",
+      "description": "Boot",
+      "price": "110.00"
+    },
+    {
+      "productId": "3205",
+      "image": "./images/taxiWinteranklebootie.png",
+      "brand": "Taxi",
+      "name": "Linda Waterproof Winter Ankel Boot",
+      "description": "Boot",
+      "price": "125.00"
+    },
+    {
+      "productId": "3206",
+      "image": "./images/asics_jolt.png",
+      "brand": "Asics",
+      "name": "Jolt 4 Running Shoe",
+      "description": "Athletic Shoe",
+      "price": "89.99"
+    },
+    {
+      "productId": "3207",
+      "image": "./images/converse_CTLift_sneaker.png",
+      "brand": "Converse",
+      "name": "Woman's Chuck Taylor All Star Lift Sneaker",
+      "description": "Athletic Shoe",
+      "price": "84.96"
+    },
+    {
+      "productId": "3208",
+      "image": "./images/clarkswestlynnLoafer.png",
+      "brand": "Clarks",
+      "name": "Westlynn Beela Loafer",
+      "description": "Flat",
+      "price": "110.00"
+    },
+    {
+      "productId": "3209",
+      "image": "./images/BOBSBCuteSneaker.png",
+      "brand": "BOBS by Skechers",
+      "name": "BOBS B Cute Slip-on",
+      "description": "Flat",
+      "price": "69.99"
+    },
+    {
+      "productId": "3500",
+      "image": "./images/birkenstock_Arizona.png",
+      "brand": "Birkenstock",
+      "name": "Arizona Sandel",
+      "description": "Sandel",
+      "price": "139.96"
+    },
+    {
+      "productId": "3501",
+      "image": "./images/birkenstockLowBend.png",
+      "brand": "Birkenstock",
+      "name": "Bend Sneaker",
+      "description": "Athletic Shoe",
+      "price": "199.96"
+    },
+    {
+      "productId": "3502",
+      "image": "./images/colehann_oxford.png",
+      "brand": "Cole Hann",
+      "name": "Grand Cap Toe Oxford",
+      "description": "Dress Shoe",
+      "price": "139.99"
+    },
+    {
+      "productId": "3503",
+      "image": "./images/clarks_tilden_oxford.png",
+      "brand": "Clarks",
+      "name": "Tilden Oxford",
+      "description": "Dress Shoe",
+      "price": "130.00"
+    },
+    {
+      "productId": "3504",
+      "image": "./images/chuck-taylor-all-star-high-street-high-top-sneaker.png",
+      "brand": "Converse",
+      "name": "Men's Chuck Taylor All Star High Street Sneaker",
+      "description": "Athletic Shoe",
+      "price": "74.96"
+    },
+    {
+      "productId": "3505",
+      "image": "./images/columbia_norton_hikingboot.png",
+      "brand": "Columbia",
+      "name": "Norton Ridge Plus Waterproof Hiking Boot",
+      "description": "Boot",
+      "price": "159.99"
+    },
+    {
+      "productId": "3506",
+      "image": "./images/merrell_runningshoe.png",
+      "brand": "Merrell",
+      "name": "Running Shoe",
+      "description": "Athletic Shoe",
+      "price": "160.00"
+    }
+  ]
+}

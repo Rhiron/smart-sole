@@ -11,3 +11,323 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Header Styling */
+html {
+  background-color: #D2BEAD;
+}
+header {
+  background-color: #282c34;
+  height: 100px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  font-family: "Josefin Sans", sans-serif;
+}
+header h1 {
+  font-size: 1.5em;
+  flex-basis: 20%;
+}
+nav {
+  flex-basis: 60%;
+  display: flex;
+  align-items: center;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content:space-around;
+
+}
+nav li {
+  list-style: none;
+  margin-right: 50px;
+}
+nav a, nav a:visited {
+  color: white;
+  text-decoration: none;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+#Cart {
+  display: flex;
+  justify-content: center;
+  flex-basis: 20%;
+}
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 5px;
+  }
+  header h1 {
+    margin-bottom: 20px;
+
+  }
+  nav {
+    order: 3;
+    flex-direction: row;
+    margin-top: 10px;
+  }
+  nav li {
+    margin-right: 50px;
+  }
+  nav ul {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #Cart {
+    width: 100%;
+    float: right;
+    margin-top: -50px;
+    margin-right: 30px;
+    justify-content: end;
+    order: 2;
+  }
+
+}
+html {
+  background-color: #ECDCCF;
+}
+header {
+  background-color: #282c34;
+  height: 100px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  font-family: "Josefin Sans", sans-serif;
+}
+h1 {
+  font-size: 1.5em;
+  flex-basis: 20%;
+}
+nav {
+  flex-basis: 60%;
+  display: flex;
+  align-items: center;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+
+}
+nav li {
+  list-style: none;
+  margin-right: 50px;
+}
+nav a, nav a:visited {
+  color: white;
+  text-decoration: none;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+#Cart {
+  display: flex;
+  justify-content: center;
+  flex-basis: 20%;
+}
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 5px;
+  }
+  header h1 {
+    margin-bottom: 20px;
+
+  }
+  nav {
+    order: 3;
+    flex-direction: row;
+    margin-top: 10px;
+  }
+  nav li {
+    margin-right: 50px;
+  }
+  nav ul {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #Cart {
+    width: 100%;
+    float: right;
+    margin-top: -50px;
+    margin-right: 30px;
+    justify-content: end;
+    order: 2;
+  }
+
+}
+
+
+
+
+/* Banner Styling */
+#Bannerimg {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: relative;
+}
+
+#Bannertxt {
+  position: relative;
+  font-family: Playfair Display;
+  font-size: 4vw;
+  margin-top: -35vw;
+  width: 300px;
+  margin-left: 70px;
+  z-index: 2;
+  color: #BF011E;
+}
+#ShopNow {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 2.5vw;
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-decoration: none;
+}
+#ShopBox {
+  margin-left: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #282c34;
+  z-index: 3;
+  width: 200px;
+  height: 50px;
+  border-radius: 15px;
+}
+@media screen and (max-width: 768px) {
+  #Bannertxt {
+    width: 100px;
+  }
+  #ShopNow {
+    font-size: 2.5vw;
+  }
+  #ShopBox {
+    width: 100px;
+    height: 30px;
+  }
+}
+
+
+
+
+.scrollbox {
+  width: 200px;
+  margin-left: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.scrollbox h4 {
+  margin-top: -15px;
+  font-size: 10pt;
+}
+.scrollbox h3 {
+  font-size: 15pt;
+}
+.scrollimgs {
+  width: 150px;
+  height: 90px;
+  margin-right: 10px;
+  
+}
+#HomeMensSection {
+  margin-top: 200px;
+}
+#MenScroll {
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+
+}
+
+
+#HomeWomensSection {
+  margin-top: 50px;
+}
+#WomenScroll {
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+}
+#Home h2, #Home h2 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2em;
+  margin-left: 70px;
+}
+
+
+
+
+#OurBrand {
+  width: 80%;
+  margin: 0 auto;
+}
+#OurBrand img {
+  width: 100%;
+}
+
+
+footer {
+  width: 100%;
+  height: 150px;
+  background-color: #282c34;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+#FootLogo {
+  width: 30%;
+  height: 100%;
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: left;
+}
+#Socials {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: blue;
+}
+footer h1 {
+  font-size: 30pt;
+}
+
+
+
+
+
+#productlist h2 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2em;
+  margin-left: 70px;
+}
+
+#productcont {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+}

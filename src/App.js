@@ -1,25 +1,32 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import { ShoppingCartProvider } from './components/ShoppingCartContext';
 import ShoppingCart from './components/ShoppingCart';
 import Checkout from './components/Checkout';
-import ProductListing from './components/ProductListing';
 import CartSidebar from './components/CartSidebar';
 import Header from './components/header.jsx';
+import Productlistmen from './components/productlistmen.jsx';
+import Productlistwomen from './components/productlistwomen.jsx';
+import Home from './components/home.jsx';
+import Footer from './components/footer.jsx';
 
 function App() {
   return (
+    <BrowserRouter>
     <ShoppingCartProvider>
       <Header />
-      <Router>
         <Routes>
-          <Route path="/" element={<ProductListing />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/men" element={<Productlistmen />} />
+          <Route path="/women" element={<Productlistwomen />} />
+
           <Route path="/cart" element={<ShoppingCart />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
       <CartSidebar />
-      </Router>
+      <Footer />
     </ShoppingCartProvider>
+    </BrowserRouter>
   );
 }
 
