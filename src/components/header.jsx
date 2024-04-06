@@ -1,6 +1,10 @@
-import 'primeicons/primeicons.css';
+// import 'primeicons/primeicons.css';
+import { useShoppingCart } from './ShoppingCartContext';
+import { Link } from 'react-router-dom';
 
-const header = () => {
+
+const Header = () => {
+  const {toggleCart} = useShoppingCart();
   return (
     <header>
         <h1>Smart Sole</h1>
@@ -8,13 +12,13 @@ const header = () => {
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Womens</a></li>
-                <li><a href="#">Mens</a></li>
+                <li><Link to={"/women"}></Link></li>
             </ul>
         </nav>
 
-        <div id="Cart"><i className='pi pi-shopping-cart' style={{fontSize:"2rem"}}></i></div>
+        <div id="Cart"><i className='pi pi-shopping-cart' style={{fontSize:"2rem"}}onClick={toggleCart}></i></div>
     </header>
   )
 }
 
-export default header
+export default Header

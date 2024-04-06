@@ -33,13 +33,36 @@ body {
     padding: 8px;
     border-radius: 0px 0px 15px 15px;
 }
+.payment-form{
+    background-color: #fcfcfc;
+    padding: 8px;
+    border-radius: 0px 0px 15px 15px;
+}
+.method-form{
+    background-color: #fcfcfc;
+    padding: 8px;
+    border-radius: 0px 0px 15px 15px;
+}
 .shipping-block{
     background-color: #e2e2e2;
     border-radius: 15px;
     padding: 1px;
-
+    margin-bottom: 20px;
     min-height: 50px;
 }
 .section-heading{
     margin-left: 15px;  
+}
+.payment-block{
+    background-color: #e2e2e2;
+    border-radius: 15px;
+    padding: 1px;
+    min-height: 50px;
+}
+.method-block{
+    background-color: #e2e2e2;
+    border-radius: 15px;
+    padding: 1px;
+    margin-bottom: 20px;
+    min-height: 50px;
 }
