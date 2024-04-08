@@ -5,6 +5,22 @@ import shoesData from "../Data.json";
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 
+import birkenstockLowBend from '../images/birkenstockLowBend.png';
+import colehann_oxford from '../images/colehann_oxford.png';
+import clarks_tilden_oxford from '../images/clarks_tilden_oxford.png';
+import chuck_taylor_all_star_high_street_high_top_sneaker from '../images/chuck-taylor-all-star-high-street-high-top-sneaker.png';
+import columbia_norton_hikingboot from '../images/columbia_norton_hikingboot.png';
+import merrell_runningshoe from '../images/merrell_runningshoe.png';
+
+const images = {
+  'birkenstockLowBend.png': birkenstockLowBend,
+  'colehann_oxford.png': colehann_oxford,
+  'clarks_tilden_oxford.png': clarks_tilden_oxford,
+  'chuck-taylor-all-star-high-street-high-top-sneaker.png': chuck_taylor_all_star_high_street_high_top_sneaker,
+  'columbia_norton_hikingboot.png': columbia_norton_hikingboot,
+  'merrell_runningshoe.png': merrell_runningshoe
+};
+
 function ProductImage({ src, alt }) {
   if (!src) {
     return <h2>Image not found</h2>;
@@ -41,7 +57,9 @@ function ProductDetails({ gender }) {
 
   if (product) {
     const name = product.name;
+    const price = product.price;
     console.log(`Product found: ${name}`);
+    console.log(`Price: ${price}`);
   } else {
     console.log('Product not found');
   }
@@ -50,22 +68,22 @@ function ProductDetails({ gender }) {
     <div>
       <h2>Shoe Description</h2>
       <div className="product-container">
-        <ProductImage src={selectedProduct.image} alt={selectedProduct.name} />
+      <img src={images[product.image.split('/').pop()]} alt="" className='scrollimgs'/>
         <ul className="product-details-list">
-          <li key={selectedProduct.id}>
-            Product Id: {selectedProduct.productId}
+          <li key={product.id}>
+            Product Id: {productId}
             <br />
             <br />
-            Brand: {selectedProduct.brand}
+            Brand: {product.brand}
             <br />
             <br />
-            Name: {selectedProduct.name}
+            Name: {product.name}
             <br />
             <br />
-            Description: {selectedProduct.description}
+            Description: {product.description}
             <br />
             <br />
-            Price: $ {selectedProduct.price}
+            Price: $ {product.price}
           </li>
           <br />
           <br />
