@@ -1,7 +1,7 @@
 import { WomenSizes, WomenColors } from "./WomanShoes";
 import { MenSizes, MenColors } from "./MenShoes";
 import imageStylesData from "./imagesStyles";
-import product from "../Data.json";
+import shoesData from "../Data.json";
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -25,16 +25,25 @@ function ProductImage({ src, alt }) {
   );
 }
 
-function ProductDetails({ productId, gender, selectedProduct }) {
-  const location = useLocation();
+function ProductDetails({ gender }) {
+  // const location = useLocation();
+  
 
-  const { id } = location.state || {};
-  if (!productId) {
-    return <h2>Product not found</h2>;
-  }
+  // const { productId } = location.state || {};
 
-  if (!selectedProduct) {
-    return <h2>Product not found</h2>;
+  const productId = 3502;
+
+  const selectedProduct = productId;
+
+  const product = shoesData && Array.isArray(shoesData.product) && typeof productId !== 'undefined' 
+  ? shoesData.product.find(item => parseInt(item.productId) === productId)
+  : undefined;  console.log(product);
+
+  if (product) {
+    const name = product.name;
+    console.log(`Product found: ${name}`);
+  } else {
+    console.log('Product not found');
   }
 
   return (

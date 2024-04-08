@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Corrected import
 import { ShoppingCartProvider } from './components/ShoppingCartContext';
 import ShoppingCart from './components/ShoppingCart';
@@ -10,8 +9,34 @@ import Productlistwomen from './components/productlistwomen.jsx';
 import Home from './components/home.jsx';
 import Footer from './components/footer.jsx';
 import ProductDetails from './components/ProductDetails';
+import React, { useState, useEffect } from "react";
+import data from "./components/Data.json";
+
  
+
+
+
+
+
 function App() {
+    const [gender, setGender] = useState("");
+    const [productId, setProductId] = useState("");
+    const [selectedProduct, setSelectedProduct] = useState(null);
+  
+    const handleGenderChange = (event) => {
+      setGender(event.target.value);
+    };
+  
+    const handleProductIdChange = (event) => {
+      setProductId(event.target.value);
+    };
+  
+    useEffect(() => {
+      const product = data.product.find((p) => p.productId === productId);
+      setSelectedProduct(product);
+    }, [productId]);
+  
+
     return (
       <BrowserRouter>
           <ShoppingCartProvider>

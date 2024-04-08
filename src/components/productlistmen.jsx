@@ -26,6 +26,7 @@ const images = {
 const Productlist = () => {
 
  const navigate = useNavigate();
+ const goToProductPage = (id) =>{ navigate('/product', {state: { productId: id }})};
 
   return (
 
@@ -33,8 +34,8 @@ const Productlist = () => {
     <div id='productlist'>
       <h2>Mens Shoes</h2>
       <div id='productcont'>
-        {shoesData.product.filter(item => parseInt(item.productId) > 3500).map((item, index) => (
-          <div className='scrollbox' key={index} style={{cursor:"pointer"}} onClick={navigate('/product', {state: { id: item.productId }})}>
+        {shoesData.product.filter(item => parseInt(item.productId) > 3499).map((item, index) => (
+          <div className='scrollbox' key={index} style={{cursor:"pointer"}} onClick={() => goToProductPage(item.productId)}>
               <img src={images[item.image.split('/').pop()]} alt="" className='scrollimgs'/>
               <h3>{item.name}</h3>
               <h4>${item.price}</h4>
