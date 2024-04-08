@@ -9,6 +9,7 @@ import Productlistmen from './components/productlistmen.jsx';
 import Productlistwomen from './components/productlistwomen.jsx';
 import Home from './components/home.jsx';
 import Footer from './components/footer.jsx';
+import ProductDetails from './components/ProductDetails';
  
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                       <Route path="/women" element={<Productlistwomen />} />
                       <Route path="/cart" element={<ShoppingCart />} />
                       <Route path="/checkout" element={<Checkout />} />
+                      <Route path="/product" element={<ProductDetails/>} />
                   </Routes>
               <CartSidebar />
               <Footer />

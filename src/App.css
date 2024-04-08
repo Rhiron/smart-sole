@@ -37,3 +37,106 @@
   }
 }
 
+
+btn3 {
+  font-size: small;
+  width: 50px;
+  height: 25px;
+  text-align: center;
+}
+
+.buttonStyle2 {
+  text-align: center;
+  background-color: aqua;
+  font-size: 12px, bold;
+  width: 100px;
+  height: 30px;
+  display: inline-block;
+  margin-left: 10px;
+}
+.buttonStyle {
+  text-align: center;
+  background-color: aqua;
+  font-size: 12px, bold;
+  width: 100px;
+  height: 30px;
+  display: inline-block;
+}
+
+btnSize {
+  font-size: small;
+  width: 50px;
+  height: 25px;
+  text-align: center;
+  font-size: 16px, bold;
+  width: 50px;
+  height: 30px;
+}
+
+h3 {
+  text-align: center;
+  font-size: 12px;
+}
+
+h2 {
+  padding-left: 100px;
+  margin-left: 500px;
+  text-align: center;
+  font-size: 16px;
+}
+.product-details-list {
+  list-style-type: none;
+}
+
+li {
+  list-style-type: none;
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+li:hover {
+  color: red;
+}
+
+.list-group-item {
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  color: red;
+}
+
+ul {
+  list-style-type: none;
+  text-align: right;
+}
+
+.checkbox {
+  margin-left: 10px;
+  width: 4px;
+  height: 8px;
+  border-color: black;
+}
+
+input[type="checkbox"] + label {
+  cursor: pointer;
+}
+
+.product-container {
+  display: fixed;
+  justify-content: space-between;
+  align-items: center;
+  text-wrap: wrap;
+  text-align: center;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  display: inline-block;
+  text-align: center;
+}

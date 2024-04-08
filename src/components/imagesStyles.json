@@ -1,0 +1,16 @@
+{
+  "imageStyles": {
+    "display": "flex",
+    "justify-content": "space-between",
+    "align-items": "left",
+    "width": "800px",
+    "height": "450px",
+    "border": "2px solid pink",
+    "borderRadius": "10px",
+    "marginLeft": "125px",
+    "marginRight": "100px",
+    "marginTop": "100px",
+    "marginBottom": "50px",
+    "padding": "50px"
+  }
+}
