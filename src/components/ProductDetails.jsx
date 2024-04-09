@@ -42,12 +42,6 @@ function ProductImage({ src, alt }) {
 }
 
 function ProductDetails({ gender }) {
-  // const location = useLocation();
-  
-
-  // const { productId } = location.state || {};
-
-  // const productId = 3502;
   const { productId } = useParams();
 
 const product = shoesData && Array.isArray(shoesData.product) && productId
@@ -74,7 +68,7 @@ const product = shoesData && Array.isArray(shoesData.product) && productId
     <div>
       <h2>Shoe Description</h2>
       <div className="product-container">
-      <img src={images[product?.image?.split('/').pop()]} alt="" className='scrollimgs'/>
+      <img src={(ProductImage(images[product?.image?.split('/').pop()]), product.name)} alt="" className='scrollimgs'/>
 
         <ul className="product-details-list">
           <li key={product.id}>
