@@ -26,7 +26,8 @@ const images = {
 const Productlist = () => {
 
  const navigate = useNavigate();
- const goToProductPage = (id) =>{ navigate('/product', {state: { productId: id }})};
+//  const goToProductPage = (id) =>{ navigate('/product', {state: { productId: id }})};
+const goToProductPage = (id) => navigate(`/product/${id}`);
 
   return (
 
