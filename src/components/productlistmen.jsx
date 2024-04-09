@@ -1,6 +1,7 @@
 import shoesData from '../Data.json';
 
 import birkenstockLowBend from '../images/birkenstockLowBend.png';
+import arizonaSandel from '../images/birkenstock_Arizona.png'
 import colehann_oxford from '../images/colehann_oxford.png';
 import clarks_tilden_oxford from '../images/clarks_tilden_oxford.png';
 import chuck_taylor_all_star_high_street_high_top_sneaker from '../images/chuck-taylor-all-star-high-street-high-top-sneaker.png';
@@ -12,6 +13,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const images = {
+  'birkenstock_Arizona.png': arizonaSandel,
   'birkenstockLowBend.png': birkenstockLowBend,
   'colehann_oxford.png': colehann_oxford,
   'clarks_tilden_oxford.png': clarks_tilden_oxford,

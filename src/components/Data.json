@@ -10,7 +10,7 @@
     },
     {
       "productId": "3201",
-      "image": "/images/clarksMiraFlatTideSandel.png",
+      "image": "../images/clarksMiraFlatTideSandel.png",
       "brand": "Clarks",
       "name": "Mira Flat Tide Sandel",
       "description": "Sandel",
@@ -82,7 +82,7 @@
     },
     {
       "productId": "3500",
-      "image": "/images/birkenstock_Arizona.png",
+      "image": "../images/birkenstock_Arizona.png",
       "brand": "Birkenstock",
       "name": "Arizona Sandel",
       "description": "Sandel",

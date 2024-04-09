@@ -4,15 +4,22 @@ import imageStylesData from "./imagesStyles";
 import shoesData from "../Data.json";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import { useShoppingCart } from "./ShoppingCartContext";
 
 import birkenstockLowBend from '../images/birkenstockLowBend.png';
+import arizonaSandel from '../images/birkenstock_Arizona.png'
 import colehann_oxford from '../images/colehann_oxford.png';
 import clarks_tilden_oxford from '../images/clarks_tilden_oxford.png';
 import chuck_taylor_all_star_high_street_high_top_sneaker from '../images/chuck-taylor-all-star-high-street-high-top-sneaker.png';
 import columbia_norton_hikingboot from '../images/columbia_norton_hikingboot.png';
 import merrell_runningshoe from '../images/merrell_runningshoe.png';
+import { useNavigate } from 'react-router-dom';
+
+
+
 
 const images = {
+  'birkenstock_Arizona.png': arizonaSandel,
   'birkenstockLowBend.png': birkenstockLowBend,
   'colehann_oxford.png': colehann_oxford,
   'clarks_tilden_oxford.png': clarks_tilden_oxford,
@@ -20,7 +27,6 @@ const images = {
   'columbia_norton_hikingboot.png': columbia_norton_hikingboot,
   'merrell_runningshoe.png': merrell_runningshoe
 };
-
 function ProductImage({ src, alt }) {
   if (!src) {
     return <h2>Image not found</h2>;
@@ -42,6 +48,12 @@ function ProductImage({ src, alt }) {
 }
 
 function ProductDetails({ gender }) {
+  // const location = useLocation();
+  
+
+  // const { productId } = location.state || {};
+
+  const { addToCart } = useShoppingCart();  
   const { productId } = useParams();
 
 const product = shoesData && Array.isArray(shoesData.product) && productId
@@ -64,11 +76,12 @@ const product = shoesData && Array.isArray(shoesData.product) && productId
     console.log('Product not found');
   }
 
+
   return (
     <div>
       <h2>Shoe Description</h2>
       <div className="product-container">
-      <img src={(ProductImage(images[product?.image?.split('/').pop()]), product.name)} alt="" className='scrollimgs'/>
+      <img id="ProductImage" src={images[product?.image?.split('/').pop()]} alt="" />
 
         <ul className="product-details-list">
           <li key={product.id}>
@@ -88,9 +101,10 @@ const product = shoesData && Array.isArray(shoesData.product) && productId
           </li>
           <br />
           <br />
-          <button class="buttonStyle" onClick={() => console.log(productId)}>
+          <button class="buttonStyle" onClick={() => addToCart(product)}>
             Add to Cart
           </button>
+          
         </ul>
       </div>
 
@@ -117,7 +131,6 @@ function Dropdown({ gender }) {
     setSelectedColor(color);
     setIsColorOpen(false); // Close the dropdown by setting to false
   };
-  
 
   return (
     <>

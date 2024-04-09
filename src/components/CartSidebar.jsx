@@ -21,9 +21,9 @@ const CartSidebar = () => {
                     <h4>{item.name}</h4>
                     <p>Price: ${item.price * item.quantity}</p>
                     <div className="quantity-adjuster">
-                        <button onClick={() => decrementItemQuantity(item.id)}>\/</button>
+                        <button onClick={() => decrementItemQuantity(item.id)}>-</button>
                         <span>{item.quantity}</span>
-                        <button onClick={() => incrementItemQuantity(item.id)}>/\</button>
+                        <button onClick={() => incrementItemQuantity(item.id)}>+</button>
                     </div>
                 </div>
             ))}
