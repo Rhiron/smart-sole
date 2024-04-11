@@ -11,6 +11,8 @@ import birkenstock_Arizona from '../images/birkenstock_Arizona.png';
 import taxiWinteranklebootie from '../images/taxiWinteranklebootie.png';
 import asics_jolt from '../images/asics_jolt.png';
 import BOBSBCutesneaker from '../images/BOBSBCutesneaker.png';
+import { useNavigate } from 'react-router-dom';
+
 
 
 const images = {
@@ -28,23 +30,25 @@ const images = {
 
   };
 
-const productlistwomen = () => {
+const ProductListWomen = () => {
+
+  const navigate = useNavigate();
+  const goToProductPage = (id) => navigate(`/product/${id}`);
+
   return (
     <div id='productlist'>
       <h2>Womens Shoes</h2>
         <div id='productcont'>
-            {shoesData.product.filter(item => {
-                const id = parseInt(item.productId);
-                return id >= 3000 && id <= 3499}).map((item, index) => (
-                <div className='scrollbox' key={index}>
-                    <img src={images[item.image.split('/').pop()]} alt="" className='scrollimgs'/>
-                    <h3>{item.name}</h3>
-                    <h4>${item.price}</h4>
-                </div>
-            ))}
+        {shoesData.product.filter(item => parseInt(item.productId) >= 3000 && parseInt(item.productId) <= 3499).map((item, index) => (
+          <div className='scrollbox' key={index} style={{cursor:"pointer"}} onClick={() => goToProductPage(item.productId)}>
+              <img src={images[item.image.split('/').pop()]} alt="" className='scrollimgs'/>
+              <h3>{item.name}</h3>
+              <h4>${item.price}</h4>
+          </div>
+    ))}
         </div>
     </div>  
     )
 }
 
-export default productlistwomen
+export default ProductListWomen

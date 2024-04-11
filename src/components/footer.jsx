@@ -6,8 +6,6 @@ const footer = () => {
           <h1>Smart Sole</h1>
           <h2>Website by MRK Designs</h2>
         </div>
-        <div id='Socials'></div>
-
     </footer>
   )
 }
