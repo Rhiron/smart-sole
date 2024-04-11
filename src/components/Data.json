@@ -73,14 +73,6 @@
       "price": "110.00"
     },
     {
-      "productId": "3209",
-      "image": "/images/BOBSBCuteSneaker.png",
-      "brand": "BOBS by Skechers",
-      "name": "BOBS B Cute Slip-on",
-      "description": "Flat",
-      "price": "69.99"
-    },
-    {
       "productId": "3500",
       "image": "../images/birkenstock_Arizona.png",
       "brand": "Birkenstock",

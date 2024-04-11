@@ -4,7 +4,7 @@
       "productId": "3200",
       "image": "src/images/clarks_laurieann.png",
       "brand": "Clarks",
-      "name": "Laurieann Sandel",
+      "name": "Laurieann Sandal",
       "description": "Sandel",
       "price": "130.00"
     },
@@ -12,7 +12,7 @@
       "productId": "3201",
       "image": "./images/clarksMiraFlatTideSandel.jpeg",
       "brand": "Clarks",
-      "name": "Mira Flat Tide Sandel",
+      "name": "Mira Flat Tide Sandal",
       "description": "Sandel",
       "price": "65.00"
     },
@@ -28,7 +28,7 @@
       "productId": "3203",
       "image": "./images/K_KHailee.png",
       "brand": "Kelly & Katie",
-      "name": "Hailee Dress Sandel",
+      "name": "Hailee Dress Sandal",
       "description": "High Heel",
       "price": "90.00"
     },
@@ -73,18 +73,10 @@
       "price": "110.00"
     },
     {
-      "productId": "3209",
-      "image": "./images/BOBSBCuteSneaker.png",
-      "brand": "BOBS by Skechers",
-      "name": "BOBS B Cute Slip-on",
-      "description": "Flat",
-      "price": "69.99"
-    },
-    {
       "productId": "3500",
       "image": "./images/birkenstock_Arizona.png",
       "brand": "Birkenstock",
-      "name": "Arizona Sandel",
+      "name": "Arizona Sandal",
       "description": "Sandel",
       "price": "139.96"
     },

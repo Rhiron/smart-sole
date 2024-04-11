@@ -377,6 +377,7 @@ const Checkout = () => {
                     {currentSection === 'payment' && renderPayment()}
                 </div>
                 <div className='cart-preview'>
+                    <h2 className='section-heading'>Cart</h2>
                     {/* Cart Preview */}
                 </div>
             </div>

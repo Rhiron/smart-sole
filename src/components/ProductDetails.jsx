@@ -106,6 +106,8 @@ const product = shoesData && Array.isArray(shoesData.product) && productId
       <img id="ProductImage" src={images[product?.image?.split('/').pop()]} alt="" />
 
         <ul className="product-details-list">
+        <Dropdown gender={gender} />
+
           <li key={product.id}>
             Product Id: {productId}
             <br />
@@ -129,8 +131,6 @@ const product = shoesData && Array.isArray(shoesData.product) && productId
           
         </ul>
       </div>
-
-      <Dropdown gender={gender} />
     </div>
   );
 }

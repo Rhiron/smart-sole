@@ -9,7 +9,7 @@ const Header = () => {
   const { toggleCart } = useShoppingCart();
   return (
     <header>
-        <h1>Smart Sole</h1>
+        <Link to="/" className='no-underline'><h1>Smart Sole</h1></Link>
         <nav>
             <ul>
             <li><Link to="/">Home</Link></li>
@@ -18,7 +18,7 @@ const Header = () => {
             </ul>
         </nav>
 
-        <div id="Cart"><i className='pi pi-shopping-cart' style={{fontSize:"2rem"}} onClick={toggleCart}></i></div>
+        <div id="Cart"><i className='pi pi-shopping-cart cart-icon' style={{fontSize:"2rem"}} onClick={toggleCart}></i></div>
     </header>
   )
 }

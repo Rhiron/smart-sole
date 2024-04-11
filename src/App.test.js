@@ -6,3 +6,9 @@ test("renders setting the gender link", () => {
   const linkElement = screen.getByText(/setGender/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+test("renders setting the age link", () => {
+  render(<App />);
+  const linkElement = screen.getByText(/setAge/i);
+  expect(linkElement).toBeInTheDocument();
+});

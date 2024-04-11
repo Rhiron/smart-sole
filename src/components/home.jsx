@@ -61,8 +61,8 @@ const Home = () => {
               <h2>Mens</h2>
               <div id='MenScroll'>
                     {shoesData.product.filter(item => parseInt(item.productId) > 3499).map((item, index) => (
-                <div className='scrollbox' key={index} style={{cursor:"pointer"}} onClick={() => goToProductPage(item.productId)}>
-                    <img src={images[item.image.split('/').pop()]} alt="" className='scrollimgs'/>
+                <div className='scrollboxhome' key={index} style={{cursor:"pointer"}} onClick={() => goToProductPage(item.productId)}>
+                    <img src={images[item.image.split('/').pop()]} alt="" className='scrollimgshome'/>
                     <h3>{item.name}</h3>
                     <h4>${item.price}</h4>
                 </div>
@@ -73,8 +73,8 @@ const Home = () => {
               <h2>Womens</h2>
               <div id='WomenScroll'>
               {shoesData.product.filter(item => parseInt(item.productId) >= 3000 && parseInt(item.productId) <= 3499).map((item, index) => (
-                <div className='scrollbox' key={index} style={{cursor:"pointer"}} onClick={() => goToProductPage(item.productId)}>
-                    <img src={images[item.image.split('/').pop()]} alt="" className='scrollimgs'/>
+                <div className='scrollboxhome' key={index} style={{cursor:"pointer"}} onClick={() => goToProductPage(item.productId)}>
+                    <img src={images[item.image.split('/').pop()]} alt="" className='scrollimgshome'/>
                     <h3>{item.name}</h3>
                     <h4>${item.price}</h4>
                 </div>
