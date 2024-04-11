@@ -43,3 +43,18 @@ body {
 .section-heading{
     margin-left: 15px;  
 }
+.section-heading-active {
+    cursor: pointer;
+    background-color: #007bff; /* Example active color */
+    color: white; /* White text for active headers */
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .section-heading-inactive {
+    cursor: pointer;
+    background-color: #f0f0f0; /* Lighter or gray color for inactive */
+    color: #333; /* Darker text for inactive headers */
+    padding: 10px;
+    margin-bottom: 10px;
+  }
