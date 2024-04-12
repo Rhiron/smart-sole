@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100;
+
 }
 
 code {
@@ -13,8 +15,9 @@ code {
 }
 
 /* Header Styling */
+
 html {
-  background-color: #E2D9CF;
+  background-color: #ecdccc;
 }
 header {
   background-color: #282c34;
@@ -23,88 +26,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
-  font-family: "Josefin Sans", sans-serif;
-}
-header h1 {
-  font-size: 1.5em;
-  flex-basis: 20%;
-}
-nav {
-  flex-basis: 60%;
-  display: flex;
-  align-items: center;
-}
-nav ul {
-  display: flex;
-  list-style: none;
-  justify-content:space-around;
-
-}
-nav li {
-  list-style: none;
-  margin-right: 50px;
-}
-nav a, nav a:visited {
-  color: white;
-  text-decoration: none;
-}
-nav a:hover {
-  text-decoration: underline;
-}
-#Cart {
-  display: flex;
-  justify-content: center;
-  flex-basis: 20%;
-}
-@media screen and (max-width: 768px) {
-  header {
-    flex-direction: column;
-    height: auto;
-    padding: 5px;
-  }
-  header h1 {
-    margin-bottom: 20px;
-
-  }
-  nav {
-    order: 3;
-    flex-direction: row;
-    margin-top: 10px;
-  }
-  nav li {
-    margin-right: 50px;
-  }
-  nav ul {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  #Cart {
-    width: 100%;
-    float: right;
-    margin-top: -50px;
-    margin-right: 30px;
-    justify-content: end;
-    order: 2;
-  }
-
-}
-html {
-  background-color: #ECDCCF;
-}
-header {
-  background-color: #282c34;
-  height: 100px;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
   font-family: "Josefin Sans", sans-serif;
 }
 h1 {
   font-size: 1.5em;
   flex-basis: 20%;
+  margin-left: 50px;
+
 }
 nav {
   flex-basis: 60%;
@@ -131,16 +59,27 @@ nav a:hover {
   display: flex;
   justify-content: center;
   flex-basis: 20%;
+  position: relative;
+  z-index: 1;
+}
+.cart-icon {
+  padding: 5px;
+
+}
+.cart-icon:hover {
+  background-color: rgb(184, 184, 184);
+  border-radius: 100px;
 }
 @media screen and (max-width: 768px) {
   header {
     flex-direction: column;
     height: auto;
-    padding: 5px;
   }
   header h1 {
     margin-bottom: 20px;
-
+    margin-left: 0;
+    position: relative;
+    z-index: 2;
   }
   nav {
     order: 3;
@@ -160,7 +99,8 @@ nav a:hover {
     margin-top: -50px;
     margin-right: 30px;
     justify-content: end;
-    order: 2;
+    order: 1;
+
   }
 
 }
@@ -169,7 +109,7 @@ nav a:hover {
 
 
 /* Banner Styling */
-#Bannerimg {
+#Bannerimg img{
   width: 100%;
   height: 100%;
   z-index: 1;
@@ -207,28 +147,58 @@ nav a:hover {
   border-radius: 15px;
 }
 @media screen and (max-width: 768px) {
+  #Bannerimg {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  #Bannerimg img {
+    width: 100%;
+    height: 60vw;
+  }
   #Bannertxt {
-    width: 100px;
+    margin-left: 5vw;
+    margin-top: -50vw;
+    width: 10px;
+    text-wrap: nowrap;
+
   }
   #ShopNow {
-    font-size: 2.5vw;
+    font-size: 4.5vw;
   }
   #ShopBox {
-    width: 100px;
-    height: 30px;
+    width: 100%;
+    height: 10vh;
+    margin: 0 auto;
+    border-radius: 0%; 
+    margin-top: 30vw;
+    
   }
 }
 
-
-
-
-.scrollbox {
+/* Styling for home page shoe display and product list shoe display */
+.scrollboxhome {
   width: 200px;
   margin-left: 80px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+}
+.scrollimgshome {
+  width: 150px;
+  height: 90px;
+  margin-right: 10px;
+  
+}
+
+.scrollbox {
+  width: 200px;
+  margin-left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .scrollbox h4 {
   margin-top: -15px;
@@ -271,6 +241,48 @@ nav a:hover {
 
 
 
+@media screen and (max-width: 768px) {
+  .scrollbox {
+    margin: 0 auto;
+  }
+  .scrollimgs {
+    width: 120px;
+    height: 70px;
+    margin-right: 10px;
+    
+  }
+
+  .scrollboxhome {
+    width: 100%;
+    margin-left: 30px;
+  }
+  #Home h2 {
+    margin-left: 5vw;
+  }
+  #ProductImage {
+    width: 100%;
+    height: 50vh;
+    margin: 0 auto;
+    padding: 0;
+  }
+  #HomeMensSection {
+    margin-top: 50px;
+  }
+  #HomeWomensSection {
+    margin-top: 50px;
+  }
+  #MenScroll {
+    margin-top: 20px;
+  }
+  #WomenScroll {
+    margin-top: 20px;
+  }
+  
+}
+
+
+
+/* Styling for brands section on home page */
 #OurBrand {
   width: 80%;
   margin: 0 auto;
@@ -279,10 +291,11 @@ nav a:hover {
   width: 100%;
 }
 
+/* Styling for footer */
 
 footer {
   width: 100%;
-  height: 150px;
+  height: 100px;
   background-color: #282c34;
   color: white;
   display: flex;
@@ -292,24 +305,40 @@ footer {
 }
 
 #FootLogo {
-  width: 30%;
+  width: 100%;
   height: 100%;
   margin-left: 20px;
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  text-align: left;
-}
-#Socials {
-  width: 40%;
-  height: 100%;
-  display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: blue;
+  
 }
+
 footer h1 {
   font-size: 30pt;
+  color: white;
+  text-decoration: none;
+}
+.no-underline {
+  text-decoration: none;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    height: auto;
+  }
+  #FootLogo {
+    width: 100%;
+    height: 50%;
+    margin-left: -20px;
+  }
+  footer h2 {
+    width: 50%;
+    text-align: right ;
+    margin-right: 30px;
+  }
+
 }
 
 
@@ -330,4 +359,110 @@ footer h1 {
   margin-top: 100px;
   margin-bottom: 100px;
 
+}
+
+
+
+/* Product Details CSS */
+
+#ProductImage {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  width: 600px;
+  height: 300px;
+  border-radius: 10px;
+  padding: 50px;
+}
+
+.product-details-list li {
+  list-style-type: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 50px;
+  margin-top: 10px;
+
+}
+.product-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonStyle {
+  text-align: center;
+  background-color: Black;
+  color: white;
+  font-size: 12px, bold;
+  width: 100px;
+  height: 30px;
+  display: inline-block;
+  
+}
+.buttonStyle:hover, .buttonStyle2:hover {
+  background-color: rgb(218, 247, 247);
+}
+.buttonStyle2 {
+  text-align: center;
+  background-color: Black;
+  color: white;
+  font-size: 15px, bold;
+  width: 100px;
+  height: 30px;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.desc {
+  font-size: 12pt;
+}
+
+@media screen and (max-width: 1200px) {
+
+  #ProductImage {
+    width: 400px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .product-details-list li {
+    max-width: 80%;
+  }
+  .product-container {
+    flex-direction: column;
+  }
+  .buttonStyle {
+    width: 80%;
+    height: 40px;
+  }
+  .buttonStyle2 {
+    width: 80%;
+    height: 40px;
+  }
+  .btn-container {
+    flex-direction: column;
+  }
+
+}
+
+@media screen and (max-width: 430px) {
+  #ProductImage {
+    width: 250px;
+    height: 150px;
+    margin: 0 auto;
+    padding: 0;
+
+  }
+  .product-container {
+    justify-content: center;
+    margin-top: 80px;
+  }
 }

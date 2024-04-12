@@ -1,5 +1,6 @@
-import shoesData from '../Data.json'; // replace with the path to your JSON file
+import shoesData from '../Data.json'; 
 
+// Images
 import clarks_laurieann from '../images/clarks_laurieann.png';
 import clarksMiraFlatTideSandel from '../images/clarksMiraFlatTideSandel.jpeg';
 import k_kGenna from '../images/k_kGenna.png';
@@ -11,7 +12,10 @@ import birkenstock_Arizona from '../images/birkenstock_Arizona.png';
 import taxiWinteranklebootie from '../images/taxiWinteranklebootie.png';
 import asics_jolt from '../images/asics_jolt.png';
 import BOBSBCutesneaker from '../images/BOBSBCutesneaker.png';
+import { useNavigate } from 'react-router-dom';
 
+
+// Function to map the images to the API data
 
 const images = {
     'clarks_laurieann.png': clarks_laurieann,
@@ -28,23 +32,26 @@ const images = {
 
   };
 
-const productlistwomen = () => {
+const ProductListWomen = () => {
+
+  const navigate = useNavigate();
+  const goToProductPage = (id) => navigate(`/product/${id}`);
+
+  // Maps the API data to the product list
   return (
     <div id='productlist'>
       <h2>Womens Shoes</h2>
         <div id='productcont'>
-            {shoesData.product.filter(item => {
-                const id = parseInt(item.productId);
-                return id >= 3000 && id <= 3499}).map((item, index) => (
-                <div className='scrollbox' key={index}>
-                    <img src={images[item.image.split('/').pop()]} alt="" className='scrollimgs'/>
-                    <h3>{item.name}</h3>
-                    <h4>${item.price}</h4>
-                </div>
-            ))}
+        {shoesData.product.filter(item => parseInt(item.productId) >= 3000 && parseInt(item.productId) <= 3499).map((item, index) => (
+          <div className='scrollbox' key={index} style={{cursor:"pointer"}} onClick={() => goToProductPage(item.productId)}>
+              <img src={images[item.image.split('/').pop()]} alt="" className='scrollimgs'/>
+              <h3>{item.name}</h3>
+              <h4>${item.price}</h4>
+          </div>
+    ))}
         </div>
     </div>  
     )
 }
 
-export default productlistwomen
+export default ProductListWomen

@@ -15,7 +15,9 @@
   .cart-sidebar.open {
     transform: translateX(0);
   }
-  
+  h5{
+    margin: 0%;
+  }
   .cart-item {
     padding: 1rem;
     border-bottom: 1px solid #ccc;
@@ -58,6 +60,10 @@
     display: flex;
     align-items: center;
     justify-content:left; 
+  }
+  .sidebar-img{
+    width: 150px;
+    height: 10w0px;
   }
   
   .quantity-adjuster button {

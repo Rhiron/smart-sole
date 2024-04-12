@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Corrected import
 import { ShoppingCartProvider } from './components/ShoppingCartContext';
 import ShoppingCart from './components/ShoppingCart';
@@ -9,8 +8,19 @@ import Productlistmen from './components/productlistmen.jsx';
 import Productlistwomen from './components/productlistwomen.jsx';
 import Home from './components/home.jsx';
 import Footer from './components/footer.jsx';
+import ProductDetails from './components/ProductDetails';
+import React, { useState, useEffect } from "react";
+import data from "./components/Data.json";
+
  
+
+
+
+
+
 function App() {
+
+
     return (
       <BrowserRouter>
           <ShoppingCartProvider>
@@ -21,6 +31,7 @@ function App() {
                       <Route path="/women" element={<Productlistwomen />} />
                       <Route path="/cart" element={<ShoppingCart />} />
                       <Route path="/checkout" element={<Checkout />} />
+                      <Route path="/product/:productId" element={<ProductDetails />} />
                   </Routes>
               <CartSidebar />
               <Footer />

@@ -2,138 +2,131 @@
   "product": [
     {
       "productId": "3200",
-      "image": "src/images/clarks_laurieann.png",
+      "image": "/images/clarks_laurieann.png",
       "brand": "Clarks",
       "name": "Laurieann Sandel",
-      "description": "Sandel",
+      "description": "Keep your warm weather looks fresh with the casual styling of these Laurieann Ruby sandals from Clarks. Made of durable openweave leather upper with a triple strap hook-and-loop construction, these casual sandals have a round open toe and slip-on design, Features include soft fabric lining, Ultimate comfort footbed for superior underfoot cushioning and a targeted cushioned heel pad, and a synthetic sole with molded heel.",
       "price": "130.00"
     },
     {
       "productId": "3201",
-      "image": "./images/clarksMiraFlatTideSandel.jpeg",
+      "image": "/images/clarksMiraFlatTideSandel.jpeg",
       "brand": "Clarks",
       "name": "Mira Flat Tide Sandel",
-      "description": "Sandel",
+      "description": "Get ready for active summer days with the Cloudsteppers Mira TIDE sandal from Clarks to bring to your collection. This sporty pair showcases a soft textile upper, strapping design and Ultimate Comfort footbed that combine to ensure a padded, secure fit.",
       "price": "65.00"
     },
     {
       "productId": "3202",
-      "image": "./images/k_kGenna.png",
+      "image": "/images/k_kGenna.png",
       "brand": "Kelly & Katie",
       "name": "Genna",
-      "description": "High Heel",
+      "description": "You can't go wrong with the classic style of the Genna pump from Kelly & Katie. This pair features a timeless silhouette, a sleek almond toe, and comfortable padding for easy wear.  It features Synthetic or fabric upper, a Slip-on closure, and a 2.75 covered heel.",
       "price": "90.00"
     },
     {
       "productId": "3203",
-      "image": "./images/K_KHailee.png",
+      "image": "/images/K_KHailee.png",
       "brand": "Kelly & Katie",
       "name": "Hailee Dress Sandel",
-      "description": "High Heel",
+      "description": "Find the perfect hue to make your style pop with the Hailee sandal from Kelly & Katie. Featuring a classic two-piece silhouette and block heel, these heels are versatile enough to pair with any outfit.  This shoe features an adjustable buckle ankle strap closure, round open toe, synthetic lining, cushioned footbed and  3.1 covered block heel.",
       "price": "90.00"
     },
     {
       "productId": "3204",
-      "image": "./images/blowfish_chelseabootie.png",
+      "image": "/images/blowfish_chelseabootie.png",
       "brand": "Blowfish",
       "name": "Beam Chelsea Bootie",
-      "description": "Boot",
+      "description": "Pair these women’s Beam rust (brown) Chelsea booties with your favourite denim bottoms, leggings, and more for an on-trend casual wardrobe update. Made of synthetic brush textile upper, these fashion boots have a round toe and twin back zipper closures for easy on/off wear. Features include smooth textile lining, cushioned footbed, BLOOM Foam insole, an eco-friendly material that consists of algae, and a durable rubber lug outsole with stacked block heel.  It features synthetic brush textile upper, dual back zipper closures and a round toe.  Its insides include smooth textile lining with a cushioned footbed made from BLOOM Foam insole, an eco-friendly material that consists of algae.  The booties measures a 4½ inch boot shaft height, 11 inch boot circumference, 2 inch stacked block heel and a rubber lug outsole.",
       "price": "110.00"
     },
     {
       "productId": "3205",
-      "image": "./images/taxiWinteranklebootie.png",
+      "image": "/images/taxiWinteranklebootie.png",
       "brand": "Taxi",
       "name": "Linda Waterproof Winter Ankel Boot",
-      "description": "Boot",
+      "description": "Complement your relaxing style with these women's Taxi Linda short black ankle boots. Showcasing a waterproof polyurethane upper, these boots are designed with a round toe front, dual zip closures for a secure fit, and a diamond-embossed thermoplastic rubber outsole with block heel for subtle elevation.  It features a round toe design with a padded footbed and side zipper closure.  Its measurements are a Shaft height of 4 inches, boot circumference 11 inches and a 2 inch stacked block heel with thermoplastic rubber outsole.",
       "price": "125.00"
     },
     {
       "productId": "3206",
-      "image": "./images/asics_jolt.png",
+      "image": "/images/asics_jolt.png",
       "brand": "Asics",
       "name": "Jolt 4 Running Shoe",
-      "description": "Athletic Shoe",
+      "description": "Hit the road with comfort and confidence in these women's Asics Jolt 4 running shoes. Crafted from engineered mesh upper for breathability, these athletic sneakers have a spacious forefoot design for a roomy fit, supportive synthetic overlays, AMPLIFOAM™ midsole for enhanced cushioning support underfoot, and a sturdy rubber outsole with flex grooves for a natural ride. Enjoy support and moisture management from the ORTHOLITE™ sockliner, made using the solution dyeing process to minimize water usage and carbon emissions, to reduce negative impact on the environment.",
       "price": "89.99"
     },
     {
       "productId": "3207",
-      "image": "./images/converse_CTLift_sneaker.png",
+      "image": "/images/converse_CTLift_sneaker.png",
       "brand": "Converse",
       "name": "Woman's Chuck Taylor All Star Lift Sneaker",
-      "description": "Athletic Shoe",
+      "description": "Sporty and casual, these women's Converse Chuck Taylor All Star Madison black mid-top fashion athletic shoes are made with a long-lasting canvas upper and are designed with a protective toe bumper. These mid-top sneakers have a lace-up closure, a padded collar, ventilating eyelets on the side, and a traction enhancing outsole.  This converse features branding at the tongue and the Iconic All Star logo patch at the medial side. It has a padded collar and tongue, gently padded footbed, Ortholite sockliner for support and moisture management with a striped rubber midsole, diamond pattern toe bumper and vulcanized rubber sole.",
       "price": "84.96"
     },
     {
       "productId": "3208",
-      "image": "./images/clarkswestlynnLoafer.png",
+      "image": "/images/clarkswestlynnLoafer.png",
       "brand": "Clarks",
-      "name": "Westlynn Beela Loafer",
-      "description": "Flat",
+      "name": "Westlynn Bella Loafer",
+      "description": "Polish your sophisticated looks with the preppy aesthetic and long-lasting comfort of with these women’s Clarks Westlynn Bella loafers. Made with durable leather upper, these loafers have a round moc toe and slip-on design. The Ultimate comfort footbed offers superior underfoot cushioning and a targeted cushioned heel pad while the chunky TPR lug outsole keeps your feet study.",
       "price": "110.00"
     },
-    {
-      "productId": "3209",
-      "image": "./images/BOBSBCuteSneaker.png",
-      "brand": "BOBS by Skechers",
-      "name": "BOBS B Cute Slip-on",
-      "description": "Flat",
-      "price": "69.99"
-    },
+
     {
       "productId": "3500",
-      "image": "./images/birkenstock_Arizona.png",
+      "image": "/images/birkenstock_Arizona.png",
       "brand": "Birkenstock",
       "name": "Arizona Sandel",
-      "description": "Sandel",
+      "description": "Birkenstock has set the standard for comfortable footwear! Slip on your pair of Arizona slides and feel supported throughout the day thanks to a contoured footbed that's anatomically formed for supreme comfort. They are with Birko-Flor™ faux leather upper, is a slip-on with adjustable straps, round open toe, synthetic lining, contoured footbed, cork midsole, EVA sole, and made in Germany.",
       "price": "139.96"
     },
     {
       "productId": "3501",
-      "image": "./images/birkenstockLowBend.png",
+      "image": "/images/birkenstockLowBend.png",
       "brand": "Birkenstock",
       "name": "Bend Sneaker",
-      "description": "Athletic Shoe",
+      "description": "Clean design and reliable comfort can make these unisex Birkenstock Bend casual sneakers your go-to kicks. Crafted with smooth natural leather upper, these sneakers have a round toe front and lace-up closure. Features include breathable microfiber lining, natural leather lined footbed, removable, anatomically shaped cork-latex footbed, polyurethane and cork shock absorbing midsole, and a durable rubber outsole.",
       "price": "199.96"
     },
     {
       "productId": "3502",
-      "image": "./images/colehann_oxford.png",
+      "image": "/images/colehann_oxford.png",
       "brand": "Cole Hann",
       "name": "Grand Cap Toe Oxford",
-      "description": "Dress Shoe",
+      "description": "Rock the classy style of these men's Cole Haan Grand Cap Toe dress Oxfords. Crafted with 90% leather and 10% polyester upper, these tailored dressy shoes flaunt an almond cap toe and lace-up closure. Along with brogue accents at the quarter panel for a touch of luxe, features include textile lining, lightweight EVA footbed, and a durable TPR outsole. Timeless footwear that compliment business casual outfits with ease.",
       "price": "139.99"
     },
     {
       "productId": "3503",
-      "image": "./images/clarks_tilden_oxford.png",
+      "image": "/images/clarks_tilden_oxford.png",
       "brand": "Clarks",
       "name": "Tilden Oxford",
-      "description": "Dress Shoe",
+      "description": "Pair a handsome look with your work ensemble, wearing these men's Clarks Tilden oxfords. Built from leather, these cap toe oxfords feature a leather upper with lace-up closure, classic stitching accents, an elastic insert for a snug fit, a CushionSoft footbed with OrthoLite® technology for comfort, support, and moisture management, soft fabric lining, hidden gore elastic side inserts for a snug fit, and a grasping outsole for a reliable grip. Timeless footwear that compliment business casual outfits with ease.",
       "price": "130.00"
     },
     {
       "productId": "3504",
-      "image": "./images/chuck-taylor-all-star-high-street-high-top-sneaker.png",
+      "image": "/images/chuck-taylor-all-star-high-street-high-top-sneaker.png",
       "brand": "Converse",
       "name": "Men's Chuck Taylor All Star High Street Sneaker",
-      "description": "Athletic Shoe",
+      "description": "Get back to the classics by rocking these men's Converse Chuck Taylor All Star High street sneakers. Fabricated with a canvas upper with lace-up closure, these high-top sneakers display a cap toe front, signature print at the tongue and side, soft padded collar, tongue, and footbed, comfy interior and a high-traction patterned outsole made of a Vulcanized rubber sole.",
       "price": "74.96"
     },
     {
       "productId": "3505",
-      "image": "./images/columbia_norton_hikingboot.png",
+      "image": "/images/columbia_norton_hikingboot.png",
       "brand": "Columbia",
       "name": "Norton Ridge Plus Waterproof Hiking Boot",
-      "description": "Boot",
+      "description": "Ideal for weekend trail hikes and everyday wear, these men’s Newton Ridge Plus II Waterproof hiking boots will keep your feet dry and comfortable. Made of PU coated leather, suede, and mesh upper with a waterproof, seam-sealed construction, these  hikers have a secure lace-up closure, pull loop at rear for easy wear, Techlite™ lightweight midsole for long lasting comfort, superior cushioning, and high energy return, and an Omni-Grip™ non-marking rubber traction outsole.",
       "price": "159.99"
     },
     {
       "productId": "3506",
-      "image": "./images/merrell_runningshoe.png",
+      "image": "/images/merrell_runningshoe.png",
       "brand": "Merrell",
       "name": "Running Shoe",
-      "description": "Athletic Shoe",
+      "description": "Heavy debris won't be bothersome when you stride in the Merrell Agility Peak running shoe. A nylon mesh upper, round toe front, sustainable recycled footbed, and grippy Vibram sole make this lace-up shoe ideal for frequent speed, direction, and vertical changes.",
       "price": "160.00"
     }
   ]

@@ -18,6 +18,8 @@ import merrell_runningshoe from '../images/merrell_runningshoe.png';
 import taxiWinteranklebootie from '../images/taxiWinteranklebootie.png';
 import asics_jolt from '../images/asics_jolt.png';
 import BOBSBCutesneaker from '../images/BOBSBCutesneaker.png';
+import { useNavigate } from 'react-router-dom';
+
 
 
 
@@ -44,35 +46,41 @@ const images = {
   };
 
 
+
+
 const Home = () => {
+
+    const navigate = useNavigate();
+
+    const goToProductPage = (id) => navigate(`/product/${id}`);
     return (
       <div>
           <Banner/>
           <div id='Home'>
           <div id='HomeMensSection'>
               <h2>Mens</h2>
+              {/* Maps the Mens API data to the home display section */}
               <div id='MenScroll'>
-                  {shoesData.product.filter(item => parseInt(item.productId) > 3500).map((item, index) => (
-                      <div className='scrollbox' key={index}>
-                          <img src={images[item.image.split('/').pop()]} alt="" className='scrollimgs'/>
-                          <h3>{item.name}</h3>
-                          <h4>${item.price}</h4>
-                      </div>
-                  ))}
+                    {shoesData.product.filter(item => parseInt(item.productId) > 3499).map((item, index) => (
+                <div className='scrollboxhome' key={index} style={{cursor:"pointer"}} onClick={() => goToProductPage(item.productId)}>
+                    <img src={images[item.image.split('/').pop()]} alt="" className='scrollimgshome'/>
+                    <h3>{item.name}</h3>
+                    <h4>${item.price}</h4>
+                </div>
+            ))}
               </div>
           </div>
           <div id='HomeWomensSection'>
               <h2>Womens</h2>
+              {/* Maps the Womens API data to the home display section */}
               <div id='WomenScroll'>
-              {shoesData.product.filter(item => {
-                    const id = parseInt(item.productId);
-                    return id >= 3000 && id <= 3499}).map((item, index) => (
-                    <div className='scrollbox' key={index}>
-                        <img src={images[item.image.split('/').pop()]} alt="" className='scrollimgs'/>
-                        <h3>{item.name}</h3>
-                        <h4>${item.price}</h4>
-                    </div>
-                ))}
+              {shoesData.product.filter(item => parseInt(item.productId) >= 3000 && parseInt(item.productId) <= 3499).map((item, index) => (
+                <div className='scrollboxhome' key={index} style={{cursor:"pointer"}} onClick={() => goToProductPage(item.productId)}>
+                    <img src={images[item.image.split('/').pop()]} alt="" className='scrollimgshome'/>
+                    <h3>{item.name}</h3>
+                    <h4>${item.price}</h4>
+                </div>
+                 ))}
               </div>
           </div>
           <br />
