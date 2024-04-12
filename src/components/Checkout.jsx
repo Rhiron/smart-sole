@@ -62,10 +62,12 @@ const Checkout = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        // Ensuring that order cant be finished until at least one item is in cart
         if ( cartItems.length > 0) {
             console.log('Submitting Form Data:', customer);
             console.log('Cart Items:', cartItems);
             alert('Thank you for your order!');
+            // getting rid of the products in cart when order finished
             clearCart();
             // Reset customer form fields to initial state
         setCustomer({
@@ -88,7 +90,7 @@ const Checkout = () => {
             zipBill: '',
             companyBill: '',
             phoneBill: '',
-            cardNum: '',      // Assuming you have these fields in the form
+            cardNum: '',
             expDate: '',
             securityCode: '',
         });
@@ -98,6 +100,7 @@ const Checkout = () => {
 };
 
     const renderShippingInfo = () => (
+        // Setting the form for Shipping information
         <form className='shipping-form'>
             <label htmlFor='email'>Email <span className='required-star'>*</span></label>
                 <br/>
@@ -366,7 +369,8 @@ const Checkout = () => {
         </form>
     );
 
-    const renderPaymentMethod = () => (
+    const renderShippingMethod = () => (
+        // Setting the form for Shipping Method
         <form>
             <input
             id='standardShipping' 
@@ -391,8 +395,8 @@ const Checkout = () => {
     );
 
     const renderPayment = () => (
+        // Setting the form for Payment information
         <form onSubmit={handleSubmit}>
-            {/* Need Payment Fields */}
             <label htmlFor='cardNum'>Card Number<span className='required-star'>*</span></label>
             <br/>
             <input
@@ -433,6 +437,7 @@ const Checkout = () => {
             <button type="submit" disabled={cartItems.length === 0} data-testid="finish-order-button">
                 Finish Order
             </button>
+            {/* Letting the user know that they have to have items to checkout */}
             {cartItems.length === 0 && (
                 <p style={{ color: 'red' }}>Must fill all required fields and have items in cart to checkout.</p>
             )}
@@ -443,12 +448,13 @@ const Checkout = () => {
         <div>
             <h2 className='page-head'>Checkout</h2>
             <div className='checkout-container'>
+                {/* Seperating information and cart preview sections */}
                 <div className='info-block'>
                     <SectionHeader title="Shipping Information" onClick={() => setCurrentSection('shipping')} isActive={currentSection === 'shipping'} />
                     {currentSection === 'shipping' && renderShippingInfo()}
 
                     <SectionHeader title="Shipping Method" onClick={() => setCurrentSection('method')} isActive={currentSection === 'method'} />
-                    {currentSection === 'method' && renderPaymentMethod()}
+                    {currentSection === 'method' && renderShippingMethod()}
 
                     <SectionHeader title="Payment" onClick={() => setCurrentSection('payment')} isActive={currentSection === 'payment'} />
                     {currentSection === 'payment' && renderPayment()}

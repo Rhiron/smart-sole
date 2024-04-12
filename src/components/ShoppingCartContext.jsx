@@ -5,26 +5,20 @@ const ShoppingCartContext = createContext();
 
 export const useShoppingCart = () => useContext(ShoppingCartContext);
 
-const enrichCartItem = (product) => {
-  const productInfo = productData.product.find(p => p.productId === product.id);
-  return {
-    ...product,
-    image: productInfo?.image,
-    price: productInfo?.price
-  };
-};
 export const ShoppingCartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState(() => {
         const storedCart = localStorage.getItem('cart');
         return storedCart ? JSON.parse(storedCart) : [];
     });
   const [isCartOpen, setIsCartOpen] = useState(false); 
+
+  // Ensuring cart isnt lost on reload and page change
   const saveCartToLocalStorage = (items) => {
     localStorage.setItem('cart', JSON.stringify(items));
   };
   const addToCart = (product) => {
     setCartItems((currentItems) => {
-      // Find if the item already exists considering id, color, and size
+      // Find if the item already exists considering id, color, and size to stack quantity
       const itemIndex = currentItems.findIndex(item =>
         item.productId === product.productId && item.color === product.color && item.size === product.size
         
@@ -43,7 +37,7 @@ export const ShoppingCartProvider = ({ children }) => {
       } else {
         updatedItems = [...currentItems, { ...product, quantity: 1 }];
       }
-  
+      
       saveCartToLocalStorage(updatedItems);
       return updatedItems;
     });
@@ -90,14 +84,11 @@ export const ShoppingCartProvider = ({ children }) => {
   const decrementItemQuantity = (productId, size, color) => {
     setCartItems(currentItems => {
       const updatedItems = currentItems.reduce((acc, item) => {
-        // Check if this is the item to update
         if (item.productId === productId && item.size === size && item.color === color) {
-          // Only add the item back to the array if the quantity is more than 1
           if (item.quantity > 1) {
             acc.push({ ...item, quantity: item.quantity - 1 });
           }
         } else {
-          // If not the item to update, just add it back to the array
           acc.push(item);
         }
         return acc;

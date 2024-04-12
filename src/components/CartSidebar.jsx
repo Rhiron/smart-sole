@@ -6,13 +6,14 @@ import productData from './Data.json';
 
 const CartSidebar = () => {
     const { cartItems, isCartOpen, closeCart, incrementItemQuantity, decrementItemQuantity } = useShoppingCart();
+    //  Allowing transition to the checkout page
     let navigate = useNavigate();
 
     const handleCheckout = () => {
         closeCart();
         navigate('/checkout');
     };
-
+    //  Toggling cart open and closed
     if (!isCartOpen) return null;
 
     return (
