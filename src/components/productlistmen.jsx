@@ -36,7 +36,7 @@ const goToProductPage = (id) => navigate(`/product/${id}`);
     
     <div id='productlist'>
       <h2>Mens Shoes</h2>
-      <div id='productcont'>
+      <div id='productcont' data-testid="scroll-box">
         {shoesData.product.filter(item => parseInt(item.productId) > 3499).map((item, index) => (
           <div className='scrollbox' key={index} style={{cursor:"pointer"}} onClick={() => goToProductPage(item.productId)}>
               <img src={images[item.image.split('/').pop()]} alt="" className='scrollimgs'/>

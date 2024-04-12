@@ -1,14 +1,22 @@
-import { render, screen } from "@testing-library/react";
-import App from "./App";
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import App from './App';
 
-test("renders setting the gender link", () => {
+test('renders header on each page', () => {
   render(<App />);
-  const linkElement = screen.getByText(/setGender/i);
-  expect(linkElement).toBeInTheDocument();
+  const headerElement = screen.getByText(/Home/i);
+  expect(headerElement).toBeInTheDocument();
 });
 
-test("renders setting the age link", () => {
+test('renders footer on each page', () => {
   render(<App />);
-  const linkElement = screen.getByText(/setAge/i);
-  expect(linkElement).toBeInTheDocument();
+  const footerElement = screen.getByText(/Website by MRK Designs/i);
+  expect(footerElement).toBeInTheDocument();
+});
+
+
+test('renders banner image', () => {
+  render(<App />);
+  const bannerImage = screen.getByAltText('Banner Image');
+  expect(bannerImage).toBeInTheDocument();
 });

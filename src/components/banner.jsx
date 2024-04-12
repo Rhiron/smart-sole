@@ -6,7 +6,7 @@ export const Banner = () => {
   return (
     <div id='Banner'>
       <div id='Bannerimg'>
-        <img src={img} alt="" />
+        <img src={img} alt="Banner Image" />
       </div>
     <h2 id='Bannertxt'>your shoes <br />should be <br />comfortable.</h2>
     <div id='ShopBox'>
