@@ -19,23 +19,7 @@ import data from "./components/Data.json";
 
 
 function App() {
-    const [gender, setGender] = useState("");
-    const [productId, setProductId] = useState("");
-    const [selectedProduct, setSelectedProduct] = useState(null);
-  
-    const handleGenderChange = (event) => {
-      setGender(event.target.value);
-    };
-  
-    const handleProductIdChange = (event) => {
-      setProductId(event.target.value);
-    };
-  
-    useEffect(() => {
-      const product = data.product.find((p) => p.productId === productId);
-      setSelectedProduct(product);
-    }, [productId]);
-  
+
 
     return (
       <BrowserRouter>

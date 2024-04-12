@@ -59,6 +59,7 @@ const Home = () => {
           <div id='Home'>
           <div id='HomeMensSection'>
               <h2>Mens</h2>
+              {/* Maps the Mens API data to the home display section */}
               <div id='MenScroll'>
                     {shoesData.product.filter(item => parseInt(item.productId) > 3499).map((item, index) => (
                 <div className='scrollboxhome' key={index} style={{cursor:"pointer"}} onClick={() => goToProductPage(item.productId)}>
@@ -71,6 +72,7 @@ const Home = () => {
           </div>
           <div id='HomeWomensSection'>
               <h2>Womens</h2>
+              {/* Maps the Womens API data to the home display section */}
               <div id='WomenScroll'>
               {shoesData.product.filter(item => parseInt(item.productId) >= 3000 && parseInt(item.productId) <= 3499).map((item, index) => (
                 <div className='scrollboxhome' key={index} style={{cursor:"pointer"}} onClick={() => goToProductPage(item.productId)}>
