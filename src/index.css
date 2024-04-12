@@ -366,18 +366,13 @@ footer h1 {
 /* Product Details CSS */
 
 #ProductImage {
-  display: "flex";
-  justify-content: "space-between";
-  align-items: "left";
-  width: "800px";
-  height: "450px";
-  border: "2px solid pink";
-  border-radius: "10px";
-  margin-left: "125px";
-  margin-right: "100px";
-  margin-top: "100px";
-  margin-bottom: "50px";
-  padding: "50px";
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  width: 600px;
+  height: 300px;
+  border-radius: 10px;
+  padding: 50px;
 }
 
 .product-details-list li {
@@ -386,7 +381,9 @@ footer h1 {
   cursor: pointer;
   font-size: 24px;
   font-weight: bold;
-  margin-right: 10px;
+  margin-right: 50px;
+  margin-top: 10px;
+
 }
 .product-container {
   display: flex;
@@ -424,8 +421,12 @@ footer h1 {
   align-items: center;
   gap: 10px;
 }
+.desc {
+  font-size: 12pt;
+}
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
+
   #ProductImage {
     width: 400px;
     height: 200px;
@@ -433,17 +434,17 @@ footer h1 {
     padding: 0;
   }
   .product-details-list li {
-    width: 200px;
+    max-width: 80%;
   }
   .product-container {
     flex-direction: column;
   }
   .buttonStyle {
-    width: 100%;
+    width: 80%;
     height: 40px;
   }
   .buttonStyle2 {
-    width: 100%;
+    width: 80%;
     height: 40px;
   }
   .btn-container {

@@ -110,10 +110,11 @@ function ProductDetails({ gender }) {
         <img id="ProductImage" src={images[product.image.split('/').pop()]} alt="" />
         <ul className="product-details-list">
           <li key={product.productId}>
-            Product Id: {productId}<br />
-            Brand: {product.brand}<br />
-            Name: {product.name}<br />
-            Description: {product.description}<br />
+            Product Id: {productId}<br /><br />
+            Brand: {product.brand}<br /><br />
+            Name: {product.name}<br /><br />
+            Description: <br /> <span id="desc">{product.description}</span> <br /><br />
+           
             Price: ${product.price}
           </li>
           <br />
