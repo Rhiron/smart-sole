@@ -70,167 +70,156 @@ function ProductImage({ src, alt }) {
 }
 
 function ProductDetails({ gender }) {
-  // const location = useLocation();
-  
+  const [selectedSize, setSelectedSize] = useState("");
+  const [selectedColor, setSelectedColor] = useState("");
+  const [error, setError] = useState("");
 
-  // const { productId } = location.state || {};
-
-  const { addToCart } = useShoppingCart();  
+  const { addToCart } = useShoppingCart();
   const { productId } = useParams();
 
-const product = shoesData && Array.isArray(shoesData.product) && productId
-  ? shoesData.product.find(item => parseInt(item.productId) === parseInt(productId))
-  : undefined;
+  const product = shoesData.product.find(item => item.productId === productId);
 
   if (!product) {
-    return <div>Product not found</div>; // This line prevents further execution if product is undefined
-  }
-  
-  console.log(product);
-  console.log(product); // See what this outputs
-
-  if (product) {
-    const name = product.name;
-    const price = product.price;
-    console.log(`Product found: ${name}`);
-    console.log(`Price: ${price}`);
-  } else {
-    console.log('Product not found');
+    return <div>Product not found</div>;
   }
 
+  const handleSizeSelection = (size) => {
+    setSelectedSize(size);
+    setError(''); // Clear error when a valid selection is made
+  };
+
+  const handleColorSelection = (color) => {
+    setSelectedColor(color);
+    setError(''); // Clear error when a valid selection is made
+  };
+
+  const handleAddToCart = () => {
+    if (!selectedSize || !selectedColor) {
+      setError('Please select both size and color.');
+      return; // Prevent adding to cart
+    }
+    setError('');
+    const productToAdd = { ...product, size: selectedSize, color: selectedColor };
+    addToCart(productToAdd);
+  };
 
   return (
     <div>
       <h2>Shoe Description</h2>
       <div className="product-container">
-      <img id="ProductImage" src={images[product?.image?.split('/').pop()]} alt="" />
-
+        <img id="ProductImage" src={images[product.image.split('/').pop()]} alt="" />
         <ul className="product-details-list">
-        <Dropdown gender={gender} />
-
-          <li key={product.id}>
-            Product Id: {productId}
-            <br />
-            <br />
-            Brand: {product.brand}
-            <br />
-            <br />
-            Name: {product.name}
-            <br />
-            <br />
-            Description: {product.description}
-            <br />
-            <br />
-            Price: $ {product.price}
+          <li key={product.productId}>
+            Product Id: {productId}<br />
+            Brand: {product.brand}<br />
+            Name: {product.name}<br />
+            Description: {product.description}<br />
+            Price: ${product.price}
           </li>
           <br />
+          <Dropdown
+            gender={gender}
+            handleSizeSelection={handleSizeSelection}
+            handleColorSelection={handleColorSelection}
+            selectedSize={selectedSize}
+            selectedColor={selectedColor}
+          />
           <br />
-          <button class="buttonStyle" onClick={() => addToCart(product)}>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+          <button className="buttonStyle" onClick={handleAddToCart}>
             Add to Cart
           </button>
-          
         </ul>
       </div>
     </div>
   );
 }
 
-function Dropdown({ gender }) {
+function Dropdown({ gender, handleSizeSelection, handleColorSelection, selectedSize, selectedColor }) {
   const [isSizeOpen, setIsSizeOpen] = useState(false);
   const [isColorOpen, setIsColorOpen] = useState(false);
-  const [selectedSize, setSelectedSize] = useState("");
-  const [selectedColor, setSelectedColor] = useState("");
 
   const toggleSizeDropdown = () => setIsSizeOpen(!isSizeOpen);
   const toggleColorDropdown = () => setIsColorOpen(!isColorOpen);
-
-  const handleSizeSelection = (size) => {
-    setSelectedSize(size);
-    setIsSizeOpen(false);
-  };
-
-  const handleColorSelection = (color) => {
-    setSelectedColor(color);
-    setIsColorOpen(false); // Close the dropdown by setting to false
-  };
 
   return (
     <>
       <div className="buttons-container">
         <div>
-          <br></br>
-          <button class="buttonStyle" onClick={toggleSizeDropdown}>
+          <button className="buttonStyle" onClick={toggleSizeDropdown}>
             Select Size {selectedSize && `: ${selectedSize}`}
           </button>
           {isSizeOpen && (
-  <ul className="product-details-list">
-    {gender === "men"
-      ? MenSizes.map((size) => (
-          <div key={size}>
-            <input
-              type="checkbox"
-              id={size}
-              name={size}
-              value={size}
-              onChange={() => handleSizeSelection(size)}
-            />
-            <label htmlFor={size}>{size}</label>
-          </div>
-        ))
-      : WomenSizes.map((size) => (
-          <div key={size}>
-            <input
-              type="checkbox"
-              id={size}
-              name={size}
-              value={size}
-              onChange={() => handleSizeSelection(size)}
-            />
-            <label htmlFor={size}>{size}</label>
-          </div>
-        ))}
-  </ul>
-)}
-
+            <ul className="product-details-list">
+              {gender === "men"
+                ? MenSizes.map((size) => (
+                    <div key={size}>
+                      <input
+                        type="radio"
+                        id={size}
+                        name="size"  // All size inputs share the same name
+                        value={size}
+                        checked={selectedSize === size}
+                        onChange={() => handleSizeSelection(size)}
+                      />
+                      <label htmlFor={size}>{size}</label>
+                    </div>
+                  ))
+                : WomenSizes.map((size) => (
+                    <div key={size}>
+                      <input
+                        type="radio"
+                        id={size}
+                        name="size"  // All size inputs share the same name
+                        value={size}
+                        checked={selectedSize === size}
+                        onChange={() => handleSizeSelection(size)}
+                      />
+                      <label htmlFor={size}>{size}</label>
+                    </div>
+                  ))}
+            </ul>
+          )}
         </div>
         <div>
-          <br></br>
-          <button class="buttonStyle2" onClick={toggleColorDropdown}>
+          <button className="buttonStyle2" onClick={toggleColorDropdown}>
             Select Color {selectedColor && `: ${selectedColor}`}
           </button>
           {isColorOpen && (
-  <ul className="product-details-list">
-    {gender === "men"
-      ? MenColors.map((color) => (
-          <div key={color}>
-            <input
-              type="checkbox"
-              id={color}
-              name={color}
-              value={color}
-              onChange={() => handleColorSelection(color)}
-            />
-            <label htmlFor={color}>{color}</label>
-          </div>
-        ))
-      : WomenColors.map((color) => (
-          <div key={color}>
-            <input
-              type="checkbox"
-              id={color}
-              name={color}
-              value={color}
-              onChange={() => handleColorSelection(color)}
-            />
-            <label htmlFor={color}>{color}</label>
-          </div>
-        ))}
-  </ul>
-)}
-
+            <ul className="product-details-list">
+              {gender === "men"
+                ? MenColors.map((color) => (
+                    <div key={color}>
+                      <input
+                        type="radio"
+                        id={color}
+                        name="color"  // All color inputs share the same name
+                        value={color}
+                        checked={selectedColor === color}
+                        onChange={() => handleColorSelection(color)}
+                      />
+                      <label htmlFor={color}>{color}</label>
+                    </div>
+                  ))
+                : WomenColors.map((color) => (
+                    <div key={color}>
+                      <input
+                        type="radio"
+                        id={color}
+                        name="color"  // All color inputs share the same name
+                        value={color}
+                        checked={selectedColor === color}
+                        onChange={() => handleColorSelection(color)}
+                      />
+                      <label htmlFor={color}>{color}</label>
+                    </div>
+                  ))}
+            </ul>
+          )}
         </div>
       </div>
     </>
   );
 }
+  
 export default ProductDetails;

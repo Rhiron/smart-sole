@@ -90,7 +90,7 @@
     },
     {
       "productId": "3502",
-      "image": "/images/colehann_oxford.png",
+      "image": "./images/colehann_oxford.png",
       "brand": "Cole Hann",
       "name": "Grand Cap Toe Oxford",
       "description": "Dress Shoe",
