@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+// 
+
+import React, { useState, useEffect } from 'react';
 import { useShoppingCart } from './ShoppingCartContext';
 import '../Styling/Checkout.css';
 
 const SectionHeader = ({ title, onClick, isActive }) => {
     const headerClass = isActive ? 'section-heading-active' : 'section-heading-inactive';
     return (
-      <div className={headerClass} onClick={onClick}>
-        <h2>{title}</h2>
-      </div>
+        <div className={headerClass} onClick={onClick}>
+            <h2>{title}</h2>
+        </div>
     );
-  };
+};
+
 const Checkout = () => {
     const { cartItems, clearCart } = useShoppingCart();
     const [customer, setCustomer] = useState({
@@ -17,19 +20,19 @@ const Checkout = () => {
         countryShip: '',
         fNameShip: '',
         lNameShip: '',
-        AddressShip: '',
+        addressShip: '',
         cityShip: '',
-        ProvShip: '',
-        ZIPShip: '',
+        provShip: '',
+        zipShip: '',
         companyShip: '',
         phoneShip: '',
         countryBill: '',
         fNameBill: '',
         lNameBill: '',
-        AddressBill: '',
+        addressBill: '',
         cityBill: '',
-        ProvBill: '',
-        ZIPBill: '',
+        provBill: '',
+        zipBill: '',
         companyBill: '',
         phoneBill: '',
     });
@@ -44,6 +47,11 @@ const Checkout = () => {
     const handleBillingToggleChange = (e) => {
         setIsBillingSameAsShipping(e.target.checked);
     };
+
+    const handleNextSection = (nextSection) => {
+        setCurrentSection(nextSection);
+    };
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setCustomer(prevCustomer => ({
@@ -54,17 +62,44 @@ const Checkout = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Submitting Form Data:', customer);
-        console.log('Cart Items:', cartItems);
-        alert('Thank you for your order!');
-        clearCart();
-    };
-    const handleNextSection = (nextSection) => {
-        setCurrentSection(nextSection);
-    };
+        if ( cartItems.length > 0) {
+            console.log('Submitting Form Data:', customer);
+            console.log('Cart Items:', cartItems);
+            alert('Thank you for your order!');
+            clearCart();
+            // Reset customer form fields to initial state
+        setCustomer({
+            email: '',
+            countryShip: '',
+            fNameShip: '',
+            lNameShip: '',
+            addressShip: '',
+            cityShip: '',
+            provShip: '',
+            zipShip: '',
+            companyShip: '',
+            phoneShip: '',
+            countryBill: '',
+            fNameBill: '',
+            lNameBill: '',
+            addressBill: '',
+            cityBill: '',
+            provBill: '',
+            zipBill: '',
+            companyBill: '',
+            phoneBill: '',
+            cardNum: '',      // Assuming you have these fields in the form
+            expDate: '',
+            securityCode: '',
+        });
+    } else {
+        alert('No items in the cart. Please add some items before checking out.');
+    }
+};
+
     const renderShippingInfo = () => (
-                <form className='shipping-form'>
-                <label htmlFor='email'>Email <span className='required-star'>*</span></label>
+        <form className='shipping-form'>
+            <label htmlFor='email'>Email <span className='required-star'>*</span></label>
                 <br/>
                 <input
                 style={{width:'calc(100% - 8px', margin:'1px'}}
@@ -328,11 +363,11 @@ const Checkout = () => {
                 )}
                 <br/>
                     <button type="button" onClick={() => handleNextSection('method')}>Save and Continue</button>
-                </form>
+        </form>
     );
 
     const renderPaymentMethod = () => (
-            <form>
+        <form>
             <input
             id='standardShipping' 
             name='standardShipping'
@@ -352,16 +387,58 @@ const Checkout = () => {
             </label>
             <br/>
                 <button type="button" onClick={() => handleNextSection('payment')}>Save and Continue</button>
-            </form>
+        </form>
     );
 
     const renderPayment = () => (
-            <form onSubmit={handleSubmit}>
-                {/*Need to add payment fields*/}
-                <button type="submit">Finish Order</button>
-            </form>
+        <form onSubmit={handleSubmit}>
+            {/* Need Payment Fields */}
+            <label htmlFor='cardNum'>Card Number<span className='required-star'>*</span></label>
+            <br/>
+            <input
+                style={{ width: 'calc(100% - 8px)', margin: '1px' }}
+                id='cardNum'
+                name='cardNum'
+                type='tel'
+                pattern='\d{4}-\d{4}-\d{4}-\d{4}'
+                value={customer.cardNum}
+                placeholder='9999-9999-9999-9999'
+                onChange={handleInputChange}
+                required
+            />
+            <label htmlFor='expDate'>Expiration Date <span className='required-star'>*</span></label>
+            <label htmlFor='securityCode' style={{marginLeft: "calc(50% - 86px)"}}>Security Code <span className='required-star'>*</span></label>
+            <br/>
+            <input
+                style={{width:'calc(50% - 14px)', margin: '1px'}}
+                id='expDate'
+                name='expDate'
+                placeholder='MM/YY'
+                type='text'
+                value={customer.expDate}
+                onChange={handleInputChange}
+                required
+            />
+            <input
+                style={{width:'calc(50% - 14px)', margin: '5px'}}
+                id='securityCode'
+                name='securityCode'
+                placeholder='123'
+                type='tel'
+                pattern='\d{3}'
+                value={customer.securityCode}
+                onChange={handleInputChange}
+                required
+            />
+            <button type="submit" disabled={cartItems.length === 0} data-testid="finish-order-button">
+                Finish Order
+            </button>
+            {cartItems.length === 0 && (
+                <p style={{ color: 'red' }}>Must fill all required fields and have items in cart to checkout.</p>
+            )}
+        </form>
     );
-
+    
     return (
         <div>
             <h2 className='page-head'>Checkout</h2>
@@ -378,7 +455,19 @@ const Checkout = () => {
                 </div>
                 <div className='cart-preview'>
                     <h2 className='section-heading'>Cart</h2>
-                    {/* Cart Preview */}
+                    {cartItems.length === 0 ? (
+                        <p>No items in cart.</p>
+                    ) : (
+                        cartItems.map((item) => (
+                            <div key={`${item.productId}-${item.color}-${item.size}`} className="cart-item">
+                                <img className="sidebar-img" src={item.image} alt={item.name} />
+                                <h4>{item.name}</h4>
+                                <h5>Size: {item.size}</h5>
+                                <h5>Color: {item.color}</h5>
+                                <p>Price: ${ (item.price * item.quantity).toFixed(2) }</p>
+                            </div>
+                        ))
+                    )}
                 </div>
             </div>
         </div>
