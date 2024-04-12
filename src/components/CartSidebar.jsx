@@ -21,7 +21,6 @@ const CartSidebar = () => {
             <button onClick={closeCart} className="close-cart">X</button>
             {cartItems.map((item) => (
                 <div key={`${item.productId}-${item.color}-${item.size}`} className="cart-item">
-                    <img className="sidebar-img" src={item.image} alt={item.name} />
                     <h4>{item.name}</h4>
                     <h5>Size: {item.size}</h5>
                     <h5>Color: {item.color}</h5>

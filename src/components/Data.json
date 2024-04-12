@@ -2,7 +2,7 @@
   "product": [
     {
       "productId": "3200",
-      "image": "/images/clarks_laurieann.png",
+      "image": "../images/clarks_laurieann.png",
       "brand": "Clarks",
       "name": "Laurieann Sandel",
       "description": "Sandel",
