@@ -1,5 +1,6 @@
 import shoesData from '../Data.json';
 
+// Images
 import birkenstockLowBend from '../images/birkenstockLowBend.png';
 import arizonaSandel from '../images/birkenstock_Arizona.png'
 import colehann_oxford from '../images/colehann_oxford.png';
@@ -11,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-
+// Function to map the images to the API data
 const images = {
   'birkenstock_Arizona.png': arizonaSandel,
   'birkenstockLowBend.png': birkenstockLowBend,
@@ -28,12 +29,11 @@ const images = {
 const Productlist = () => {
 
  const navigate = useNavigate();
-//  const goToProductPage = (id) =>{ navigate('/product', {state: { productId: id }})};
-const goToProductPage = (id) => navigate(`/product/${id}`);
+  const goToProductPage = (id) => navigate(`/product/${id}`);
 
   return (
 
-    
+    // Maps the API data to the product list
     <div id='productlist'>
       <h2>Mens Shoes</h2>
       <div id='productcont' data-testid="scroll-box">

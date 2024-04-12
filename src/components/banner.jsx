@@ -10,6 +10,7 @@ export const Banner = () => {
       </div>
     <h2 id='Bannertxt'>your shoes <br />should be <br />comfortable.</h2>
     <div id='ShopBox'>
+      {/* Brings the user to the mens shoes section. */}
     <Link to="/men" id='ShopNow'>Shop Now</Link>
     </div>
 </div>

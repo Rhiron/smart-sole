@@ -1,5 +1,6 @@
-import shoesData from '../Data.json'; // replace with the path to your JSON file
+import shoesData from '../Data.json'; 
 
+// Images
 import clarks_laurieann from '../images/clarks_laurieann.png';
 import clarksMiraFlatTideSandel from '../images/clarksMiraFlatTideSandel.jpeg';
 import k_kGenna from '../images/k_kGenna.png';
@@ -14,6 +15,7 @@ import BOBSBCutesneaker from '../images/BOBSBCutesneaker.png';
 import { useNavigate } from 'react-router-dom';
 
 
+// Function to map the images to the API data
 
 const images = {
     'clarks_laurieann.png': clarks_laurieann,
@@ -35,6 +37,7 @@ const ProductListWomen = () => {
   const navigate = useNavigate();
   const goToProductPage = (id) => navigate(`/product/${id}`);
 
+  // Maps the API data to the product list
   return (
     <div id='productlist'>
       <h2>Womens Shoes</h2>
